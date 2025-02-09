@@ -1,0 +1,13 @@
+{
+  "name": "email-sender",
+  "version": "1.0.0",
+  "description": "GitHub Actions Email Sender",
+  "main": "sendEmail.js",
+  "dependencies": {
+    "nodemailer": "^6.9.7",
+    "ejs": "^3.1.9"
+  },
+  "scripts": {
+    "send": "node sendEmail.js"
+  }
+}
