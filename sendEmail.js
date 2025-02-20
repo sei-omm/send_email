@@ -11,7 +11,7 @@ const toEmail = process.env.TO_EMAIL;  // ✅ Get from API
 
 // Read and compile EJS template
 const emailTemplate = fs.readFileSync("birthdateWish.ejs", "utf-8");
-const htmlContent = ejs.render(emailTemplate, { username });
+const htmlContent = ejs.render(emailTemplate);
 
 const transporter = nodemailer.createTransport({
   host: smtpHost,
