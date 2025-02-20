@@ -9,7 +9,7 @@ const smtpUser = process.env.SMTP_USER;
 const smtpPass = process.env.SMTP_PASS;
 const toEmail = process.env.TO_EMAIL;  // ✅ Get from API
 const hostname = process.env.HOSTNAME;
-cosnt data = process.env.DATA;
+const data = process.env.DATA;
 
 // Read and compile EJS template
 const emailTemplate = fs.readFileSync("birthdateWish.ejs", "utf-8");
