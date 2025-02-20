@@ -37,5 +37,6 @@ jobs:
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          HOSTNAME: ${{ secrets.HOSTNAME }}
           TO_EMAIL: ${{ github.event.inputs.to }}
           DATA: ${{ github.event.inputs.data }}
