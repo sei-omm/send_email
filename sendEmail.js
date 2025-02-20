@@ -9,11 +9,11 @@ const smtpUser = process.env.SMTP_USER;
 const smtpPass = process.env.SMTP_PASS;
 const toEmail = process.env.TO_EMAIL;  // ✅ Get from API
 const hostname = process.env.HOSTNAME;
-const data = process.env.DATA;
 
+const parseData = JSON.parse(process.env.DATA || '{}');
 // Read and compile EJS template
 const emailTemplate = fs.readFileSync("birthdateWish.ejs", "utf-8");
-const htmlContent = ejs.render(emailTemplate, { hostname, ...data} );
+const htmlContent = ejs.render(emailTemplate, { hostname, ...parseData} );
 
 const transporter = nodemailer.createTransport({
   host: smtpHost,
