@@ -48,7 +48,7 @@ if(emailType === "RESET_PASSWORD") {
   mailOptions.from = `"Payment Link For ${templateData?.course_name}" <${smtpUser}>`;
   mailOptions.subject = "Payment Link From SEI";
   mailOptions.html = htmlContent;
-} else if (type === "SEND_JOB_INFO_VENDOR") {
+} else if (emailType === "SEND_JOB_INFO_VENDOR") {
   const emailTemplate = fs.readFileSync("jobPosting.ejs", "utf-8");
   const htmlContent = ejs.render(emailTemplate, { hostname, ...parseData} );
   
