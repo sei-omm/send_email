@@ -8,10 +8,9 @@ const smtpPort = process.env.SMTP_PORT;
 const smtpUser = process.env.SMTP_USER;
 const smtpPass = process.env.SMTP_PASS;
 const toEmail = process.env.TO_EMAIL;  // ✅ Get from API
-const username = process.env.USERNAME || "Guest";  // ✅ Get from API
 
 // Read and compile EJS template
-const emailTemplate = fs.readFileSync("emailTemplate.ejs", "utf-8");
+const emailTemplate = fs.readFileSync("birthdateWish.ejs", "utf-8");
 const htmlContent = ejs.render(emailTemplate, { username });
 
 const transporter = nodemailer.createTransport({
@@ -27,7 +26,7 @@ const transporter = nodemailer.createTransport({
 const mailOptions = {
   from: `"Your Company" <${smtpUser}>`,
   to: toEmail,
-  subject: "Personalized Email for " + username,
+  subject: "Personalized Email for ",
   html: htmlContent,
 };
 
